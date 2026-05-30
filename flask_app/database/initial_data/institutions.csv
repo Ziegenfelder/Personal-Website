@@ -1,0 +1,5 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Academia","Michigan State University","Computer Science",NULL,"East Lansing","Michigan",NULL
+"2","Academia","Walled Lake Central High School",NULL,"1600 Oakley Park Rd","Commerce Charter Twp","Michigan","48390"
+"3","Industry","Electro-Matic Visual","Computer Science","23660 Industrial Park Dr","Farmington Hills","Michigan","48335"
+"4","Industry","EZMetrology","Computer Science","730 Welch Rd","Commerce Charter Twp","Michigan","48390"

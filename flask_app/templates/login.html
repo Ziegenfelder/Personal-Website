@@ -1,0 +1,45 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+
+{% block maincontent %}
+<br><br>
+<input type="none" value=" Login as Owner" onclick="checkCredentials()" />
+<label for="email">Email:</label>
+<input type="text" id = "email">
+<label for="password">Password:</label>
+<input type="text" id = "password">
+<label for="attempts">Number of Attempts:</label>
+<label for="attempts-number" id="attempts-number">0</label>
+
+<script>
+let count     = 0
+function checkCredentials() {
+    // package data in a JSON object
+    // var data_d = {'email': 'owner@email.com', 'password': 'password'}
+    var data_d = {'email': document.getElementById("email").value, 'password': document.getElementById("password").value}
+
+    // SEND DATA TO SERVER VIA jQuery.ajax({})
+    jQuery.ajax({
+        url: "/processlogin",
+        data: data_d,
+        type: "POST",
+        success:function(returned_data){
+              returned_data = JSON.parse(returned_data);
+              if (returned_data.success == 1){
+                    window.location.href = "/home";
+              }
+              else{
+                count = count +1;
+                document.getElementById("attempts-number").textContent = count;
+              }
+            }
+    });
+}
+</script>
+{% endblock %}
+
+

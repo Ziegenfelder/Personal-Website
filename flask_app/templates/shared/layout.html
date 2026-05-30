@@ -1,0 +1,83 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyler Ziegenfelder's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/TZ.png') }}">
+  {% block extracss %}{% endblock %}
+</head>
+
+<body class="body">
+    <article>
+    <!-- The header  -->
+	<!-- header section (most done in css)!-->
+	<header  class="header"></header>
+	<!-- nav section!-->
+	<nav>
+		<!-- nav bar links and menu bar image!-->
+		<div class="nav">
+			<div class="navlabel"> CSE 477 - Homework 1 </div>
+			<div> <a class="link" href="home"> Home</a> </div>
+			<div> <a class="link" href="projects"> Projects</a> </div>
+			<div> <a class="link" href="resume"> Resume</a></div>
+			<div> <a class="link" href="chat"> Chat</a></div>
+			{% if 'email' in session %}
+			<div> <a class="link" id="login-logout" href="logout"> Logout</a></div>
+			{% else %}
+			<div> <a class="link" id="login-logout" href="login"> Login</a></div>
+			{% endif %}
+			<div> <a class="link" href="https://www.linkedin.com/in/tyler-ziegenfelder-720359266/"> <img class="linkedin" src="../static/main/images/social-linkedin.png" alt="Linkedin" /></a></div>
+			<div> <img class="menubar" src="../static/main/images/menu-bar.png" alt="Menu Bar" /></div>
+		</div>
+		<!-- drop down menu when image is pressed -->
+		<div class="menudropdown">
+			<div> <a class="tinylink" href="home"> Home</a> </div>
+			<div> <a class="tinylink" href="projects"> Projects</a> </div>
+			<div> <a class="tinylink" href="resume"> Resume</a></div>
+			<div> <a class="tinylink" href="chat"> Chat</a></div>
+			{% if 'email' in session %}
+			<div> <a class="tinylink" id="login-logout-tiny" href="/logout"> Logout</a></div>
+			{% else %}
+			<div> <a class="tinylink" id="login-logout-tiny" href="/login"> Login</a></div>
+			{% endif %}
+			<div> <a class="tinylink" href="https://www.linkedin.com/in/tyler-ziegenfelder-720359266/"> Linkedin</a></div>
+		</div>
+	</nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+	<!-- footer section -->
+	<footer class="footer">
+	© 2024 Tyler Ziegenfelder
+	</footer>
+	
+	<!-- feedback button -->
+	<div class="feedback-button"> 
+		<p class="feedback-button-text">Feedback</p>
+	</div>
+	
+	<!-- feedback form -->
+	<div class = "feedback-form-div">
+		<form class="feedback-form" action="/processfeedback" method="post" enctype="application/x-www-form-urlencoded">
+			<div class="feedback-form-grid">
+				<input class="feedback-form-item" for="fname" name="fname" value="" placeholder="Your Name">
+				<input class="feedback-form-item" for="femail" name="femail" value="" placeholder="Your Email">
+				<input class="feedback-form-item" for="fcomment" name="fcomment" value="" placeholder="Insert Feedback Here">
+				<input class="feedback-form-item" type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+	
+	{% block extrajs %}{% endblock %}
+	<script src="../static/main/js/menu.js"></script>
+    </article>
+  
+</body>
+
+</html>

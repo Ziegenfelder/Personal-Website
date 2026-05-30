@@ -1,0 +1,31 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/home.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<!-- split screen -->
+<div class="personaldiv">
+	<!-- my picture -->
+	<div>
+		<img class="img" src="../static/main/images/PersonalPhoto.jpg" alt="Personal Photo" />
+	</div>
+	<!-- personal text -->
+	<div class="personal"> 
+		<p class="p"> 
+			<span class="introtext"> Tyler Ziegenfelder </span> is currently a junior at Michigan State University, majoring in computer science
+			and minoring in game design. He is working to finish his bachelor's degree and will aim for a masters.
+			He doesn't know what part of computer science he wants to take a part in so he is interning in many different
+			fields of computer science.
+		</p>
+	</div>
+</div>
+<!-- fun fact -->
+<div class="funfact">
+	<hr>
+	<h1 class="funfactheader"> A fun fact about me:</h1>
+	<p class="p"> <b>{{fun_fact}}</b></p>
+
+</div>
+{% endblock %}

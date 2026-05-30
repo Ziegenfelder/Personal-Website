@@ -1,0 +1,69 @@
+/* element css*/
+
+.p{
+	font-size: calc(1em + 1vw);
+	text-align: center;
+	text-justify: interword;
+}
+
+.img {
+	height: 50vh;
+	width: 40vw;
+	object-fit: cover;
+	border-style: solid;
+}
+
+/* intro css*/
+
+.intro{
+	text-align: center;
+}
+
+.introheader{
+	font-size: calc(1em + 3vw);
+}
+
+/* project css*/
+
+.projectdiv{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 50vh;
+	width: 80vw;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.project{
+	overflow: auto;
+	max-height: 100%;
+}
+
+.projecttext{
+	font-weight: bold;
+	font-size: calc(1em + 1vw);
+}
+
+/* when screen is small */
+@media screen and (max-width: 650px) {
+	
+	.img {
+	height: 50vh;
+	width: 80vw;
+	object-fit: cover;
+	border-style: solid;
+	}
+	
+	.projectdiv{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		width: 80vw;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.project{
+		overflow: visible;
+	}
+}

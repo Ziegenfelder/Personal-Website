@@ -1,0 +1,21 @@
+/* elements */
+
+.whole-div{
+	min-height: 65vh;
+}
+
+.intro-text{
+	text-align: center;
+	font-size: calc(1.25em + 1vw);
+}
+
+/* feedback */
+
+.feedback-list{
+	list-style-type: square;
+	padding-left: 5vw;
+}
+
+.feedback-text{
+	font-size: calc(.5em + 1vw);
+}

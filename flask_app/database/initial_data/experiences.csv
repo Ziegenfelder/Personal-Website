@@ -1,0 +1,6 @@
+"experience_id","position_id","name","description","hyperlink","start_date","end_date"
+"1","1","Bachelors Degree","Obtaining a bachelors degree in Computer Science","https://admissions.msu.edu/academics/majors-degrees-programs/computer-science","2021-09-01",NULL
+"2","2","Member of the National Honor Society","Participated in numerous volunteering activities and maintained a high GPA","https://central.wlcsd.org/academics/national-honor-society","2019-09-01","2021-06-01"
+"3","2","Monsters 308 Robotics Team","Programmed for my schools robotics club","https://walledlakerobotics.com/308.html","2018-01-01","2021-01-01"
+"4","3","Database creation","created a database for customers","https://visual.electro-matic.com/","2023-05-01","2023-08-01"
+"5","4","Software translation","Modified EZSlam software to allow compatibility with different languages.","https://ezmetrology.com/","2022-06-01","2022-08-01"

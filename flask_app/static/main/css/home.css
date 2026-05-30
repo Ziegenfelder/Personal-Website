@@ -1,0 +1,69 @@
+/* element css*/
+
+.p{
+	font-size: calc(1em + 1vw);
+	text-align: center;
+	text-justify: interword;
+}
+
+.img {
+	height: 50vh;
+	width: 40vw;
+	object-fit: cover;
+	border-style: solid;
+}
+
+
+/* personal css*/
+.personaldiv{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 50vh;
+	width: 80vw;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.personal{
+	overflow: auto;
+	max-height: 100%;
+}
+
+.introtext{
+	font-weight: bold;
+	font-size: calc(1em + 1vw);
+}
+
+/*fun fact css*/
+.funfact{
+	text-align: center;
+}
+
+.funfactheader{
+	font-size: calc(1em + 3vw);
+}
+
+/* when screen is small */
+@media screen and (max-width: 650px) {
+	
+	.img {
+	height: 50vh;
+	width: 80vw;
+	object-fit: cover;
+	border-style: solid;
+	}
+	
+	.personaldiv{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		width: 80vw;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.personal{
+		overflow: visible;
+	}
+	
+}

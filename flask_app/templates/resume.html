@@ -1,0 +1,68 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+<!-- For each institution - generate a row --> 
+{% for inst_id, inst in resume_data.items() %}
+<!-- Handle the institutions -->
+{% set department = inst['department'] %}
+	{% if department is none or department == "NULL"%}
+	{% set department = "" %}
+	{% else %}
+	{% set department = department ~ ", " %}
+	{% endif %}
+{% set address = inst['address'] %}
+	{% if address is none or address == "NULL"%}
+	{% set address = "" %}
+	{% else %}
+	{% set address = address ~ ", " %}
+	{% endif %}
+{% set zip = inst['zip'] %}
+	{% if zip is none or zip == "NULL"%}
+	{% set zip = "" %}
+	{% else %}
+	{% set zip =  ", " ~ zip %}
+	{% endif %}
+<div class = "grid-container">
+	<h1 class = "grid-item-left">{{ inst['name']}} </h1>
+	<p class = "grid-item-right">{{ department ~ address ~inst['city'] ~ ", " ~ inst['state'] ~ zip}} </p>
+</div>
+{% if inst['positions'] != {} %}
+	{% for pos_id, pos in inst['positions'].items() %}
+	<!--  handle the positions --> 
+	{% set end_date = pos['end_date'] %}
+		{% if end_date is none or end_date == "NULL"%}
+		{% set end_date = "Current" %}
+		{% endif %}
+	<div class = "grid-container">
+		<h2 class = "grid-item-left">{{ pos['title']}} </h2>
+		<p class = "grid-item-right">{{ pos['start_date'] ~ ' - ' ~ end_date }} </p>
+	</div>
+	<p class="position">{{ pos['responsibilities']}} </p>
+		{% if pos['experiences'] != {} %}
+			{% for exp_id, exp in pos['experiences'].items() %}
+			<!-- Hadle the experiences -->
+			{% set space = joiner("") %}
+			<ul class="bullet-list"> <li> {{space()}} <a href="{{ exp['hyperlink'] }}"> {{ exp['name'] }} </a> <a>{{ ' - ' ~exp['description']}} </a></li> </ul>
+				{% if exp['skills'] != {} %}
+				{% set comma = joiner(", ") %}
+				{{comma()}} <a class="skill">{{"Skills Used:"}}</a>
+					{% for sk_id, sk in exp['skills'].items() %}
+					<!-- adding skills together -->
+					<a class="skill-interior">{{sk['name']}}</a>{{ ", " if not loop.last else "" }}
+					{% endfor %}
+				{% endif %}
+			</br>
+			{% endfor %}
+		{% endif %} 
+	{% endfor %}
+{% endif %}
+
+<hr>
+{% endfor %}
+
+
+
+{% endblock %}
+
+

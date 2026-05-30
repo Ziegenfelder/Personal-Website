@@ -1,0 +1,29 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/projects.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<!-- intro text-->
+<div class="intro">
+	<h1 class="introheader"> Below is a list of projects I worked on in CSE 477:</h1>
+	<p class="p"> Click an image, or hyperlink in the description to learn more.</p>
+	<hr>
+</div>
+<!-- split screen-->
+<div class="projectdiv">
+	<!-- piano image -->
+	<div> <a href="piano"> <img class="img" src="../static/main/images/piano.jpeg" alt="Piano" /> </a> </div>
+	<!-- project text-->
+	<div class="project"> 
+		<p class="p"> 
+			<span class="projecttext"> Javascript Piano </span>
+			As part of my first Homework assignment in CSE477, I developed an interactive
+			piano build in pure HTML, CSS, and Javascript. This tool (in addition to my webpage)
+			highlight my ability to build beautiful and mobile-friendly front-end applications.
+			<a href="piano"> Click here to see and play! </a>
+		</p>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/piano.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<!-- intro text-->
+<div class="scary">
+	<p class="scarytext"> Behold piano great and old, it's master slumbers in far off cold,
+	 if you wish to see anew, call out to it - we see you. </p>
+	<hr>
+</div>
+<div>
+	<div class="backgroundpiano"> 
+		<img class="awakenimage" src="../static/main/images/texture.jpeg" alt="Awoken One" />
+		<p class="pianotext"> The Great Old One</p>
+		<p class="awakentext"> I have awoken.</p>
+		<!-- complete keygrid -->
+		<div id="keygrid">
+			<!-- just the white keys-->
+			<div class="whitekeygrid">
+				<div class="whitekey" id="a"> <p class="whitekeytext"> A </p> </div>
+				<div class="whitekey" id="s"> <p class="whitekeytext"> S </p> </div>
+				<div class="whitekey" id="d"> <p class="whitekeytext"> D </p></div>
+				<div class="whitekey" id="f"> <p class="whitekeytext"> F </p></div>
+				<div class="whitekey" id="g"> <p class="whitekeytext"> G </p></div>
+				<div class="whitekey" id="h"> <p class="whitekeytext"> H </p></div>
+				<div class="whitekey" id="j"> <p class="whitekeytext"> J </p></div>
+				<div class="whitekey" id="k"> <p class="whitekeytext"> K </p></div>
+				<div class="whitekey" id="l"> <p class="whitekeytext"> L </p></div>
+				<div class="whitekey" id="semi"> <p class="whitekeytext"> ; </p></div>						
+			</div>
+			<!-- just the black keys-->
+			<div class="blackkeygrid">
+				<div class="blackkey" id="w"> <p class="blackkeytext"> W </p> </div>
+				<div class="blackkey" id="e"> <p class="blackkeytext"> E </p></div>
+				<div class="blackkey" id="t"> <p class="blackkeytext"> T </p> </div>
+				<div class="blackkey" id="y"> <p class="blackkeytext"> Y </p></div>
+				<div class="blackkey" id="u"> <p class="blackkeytext"> U </p></div>
+				<div class="blackkey" id="o"> <p class="blackkeytext"> O </p></div>
+				<div class="blackkey" id="p"> <p class="blackkeytext"> P </p></div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script defer src="../static/main/js/piano.js"></script>
+{% endblock %}

@@ -1,0 +1,39 @@
+/* grid elements*/
+.grid-container{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
+.grid-item-left{
+	font-size: calc(1.25em + 1vw);
+	text-align: left;
+}
+
+.grid-item-right{
+	font-size: calc(.5em + 1vw);
+	text-align: right;
+}
+
+/* list elements*/
+.bullet-list{
+	font-size: calc(.5em + 1vw);
+	list-style-type: square;
+	padding-left: 8vw;
+}
+
+/*group specific*/
+.position{
+	font-size: calc(.5em + 1vw);
+	padding-left: 5vw;
+}
+
+.skill{
+	font-size: calc(0.25em + 1vw);
+	padding-left: 10vw;
+}
+
+.skill-interior{
+	font-size: calc(0.25em + 1vw);
+}
